@@ -1,4 +1,10 @@
-function Card({ discount,image, name, price, rate }) {
+import { useState } from "react";
+
+function Card({ discount, image, name, price, rate, id }) {
+  const [cart, setCart] = useState([]);
+  function addToCart(id) {
+    setCart([id, ...cart]);
+  }
   return (
     <>
       <div className="h-[300px] w-64 border-solid border-2 border-red-700 p-4">
@@ -6,9 +12,7 @@ function Card({ discount,image, name, price, rate }) {
           <div className="rounded-lg bg-red-500 flex items-center text-white px-5">
             -{discount}%
           </div>
-          <div>
-            
-          </div>
+          <div></div>
           <div>
             <ul>
               <li>Heart</li>
@@ -16,8 +20,14 @@ function Card({ discount,image, name, price, rate }) {
             </ul>
           </div>
         </div>
-        <button className="bg-black text-white">Add to cart</button>
-
+        <button
+          className="bg-black text-white"
+          onClick={() => {
+            addToCart(id);
+          }}
+        >
+          Add to cart
+        </button>
       </div>
     </>
   );
