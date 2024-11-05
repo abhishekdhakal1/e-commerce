@@ -13,12 +13,12 @@ function SideBar() {
           onClick={() => setShowWomenSub(!showWomenSub)}
         >
           <span>Women's Fashion</span>
-          <span className="ml-2">
+          <span>
             {showWomenSub ? 'v' : '>'}
           </span>
         </li>
         {showWomenSub && (
-          <ul className="ml-4 space-y-2 text-sm text-gray-500">
+          <ul className="text-sm">
             <li className="cursor-pointer hover:text-black">Dresses</li>
             <li className="cursor-pointer hover:text-black">Tops</li>
             <li className="cursor-pointer hover:text-black">Shoes</li>
