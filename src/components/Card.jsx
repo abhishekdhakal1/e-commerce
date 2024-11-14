@@ -7,16 +7,16 @@ function Card({ discount, image, name, price, rate, id }) {
   const [products, setProducts] = useState([]);
 
   function addToCart(id) {
-    setCart((prevCart) => [id, ...prevCart]); // Update cart properly
+    setCart((prevCart) => [id, ...prevCart]); 
   }
 
   useEffect(() => {
     axios
       .get("https://fake-store-api.mock.beeceptor.com/api/products")
       .then((res) => {
-        setProducts(res.data); // Access the data property of the response
+        setProducts(res.data);
       })
-      .catch((err) => console.error("Error fetching data:", err)); // Add error handling
+      .catch((err) => console.error("Error fetching data:", err));
   }, []);
 
   return (
@@ -24,14 +24,13 @@ function Card({ discount, image, name, price, rate, id }) {
       className="h-[300px] w-64 border border-solid border-red-700 p-4 rounded-lg flex flex-col justify-between bg-cover bg-center text-white"
       style={{ backgroundImage: `url(${image})` }}
     >
-      {/* Top Section with Discount Badge and Icons */}
+      
       <div className="flex justify-between items-center">
-        {/* Discount Badge */}
         <div className="rounded-lg bg-red-500 flex items-center text-white px-3 py-1">
           -{discount}%
         </div>
 
-        {/* Icons */}
+     
         <div className="flex flex-col space-y-2">
           <button className="hover:text-red-500">
             <FaHeart />
@@ -42,7 +41,7 @@ function Card({ discount, image, name, price, rate, id }) {
         </div>
       </div>
 
-      {/* Add to Cart Button */}
+  
       <button
         className="bg-black bg-opacity-80 rounded py-2 mt-4 w-full hover:bg-opacity-90"
         onClick={() => addToCart(id)}
@@ -50,7 +49,6 @@ function Card({ discount, image, name, price, rate, id }) {
         Add to cart
       </button>
 
-      {/* Display fetched product names */}
       <div>
         {products.map((item) => (
           <li key={item.id}>{item.name}</li>
