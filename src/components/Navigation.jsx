@@ -2,7 +2,6 @@ import { CiSearch, CiHeart, CiShoppingCart } from "react-icons/ci";
 function Navigation() {
   return (
     <>
-      {/* navdiv */}
       <div className="flex justify-between list-none">
         {" "}
         <div className="flex-1 flex justify-center font-bold">Exclusive</div>

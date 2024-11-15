@@ -14,7 +14,7 @@ function LandingPage() {
         <div className="flex items-center space-x-4">
           <select className="bg-black text-white border-none">
             <option value="English">English</option>
-            <option value="French">French</option>
+            <option value="French">Nepali</option>
           </select>
         </div>
       </div>

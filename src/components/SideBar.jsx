@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import myImage from "../assets/img.png";
 
 function SideBar() {
@@ -8,13 +8,13 @@ function SideBar() {
   return (
     <div className="flex items-start bg-white text-gray-700 p-4">
       <ul className="flex flex-col space-y-4 text-lg">
-        <li 
-          className="cursor-pointer hover:text-black flex items-center"
+        <li
+          className="cursor-pointer hover:text-black flex items-center gap-x-4"
           onClick={() => setShowWomenSub(!showWomenSub)}
         >
-          <span>Women's Fashion</span>
-          <span>
-            {showWomenSub ? 'v' : '>'}
+          <span className="self-start">Women's Fashion</span>
+          <span className="font-bold flex items-center justify-center self-end">
+            {showWomenSub ? "v" : ">"}
           </span>
         </li>
         {showWomenSub && (
@@ -25,13 +25,13 @@ function SideBar() {
           </ul>
         )}
 
-        <li 
-          className="cursor-pointer hover:text-black flex items-center"
+        <li
+          className="cursor-pointer hover:text-black flex items-center gap-x-10"
           onClick={() => setShowMenSub(!showMenSub)}
         >
           <span>Men's Fashion</span>
-          <span className="ml-2">
-            {showMenSub ? 'v' : '>'}
+          <span className="font-bold flex items-center justify-center self-end">
+            {showMenSub ? "v" : ">"}
           </span>
         </li>
         {showMenSub && (

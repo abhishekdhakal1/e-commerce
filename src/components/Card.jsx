@@ -42,12 +42,11 @@ function Card() {
               </div>
             </div>
 
-            <div className="flex-grow overflow-hidden">
+            <div className="flex-grow self-center overflow-hidden">
               <img
                 src={product.image}
                 alt={product.title}
-                className="h-full w-full object-ficls
-              cls
+                className="h-full w-full
               "
               />
             </div>
@@ -68,7 +67,9 @@ function Card() {
         ))}
       </div>
       <div className="flex justify-center">
-        <button className="m-1 p-2 rounded text-center bg-red-500">View All Products</button>
+        <button className="m-1 p-2 rounded text-center bg-red-500">
+          View All Products
+        </button>
       </div>
     </>
   );
