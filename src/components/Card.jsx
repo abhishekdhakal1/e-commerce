@@ -20,46 +20,57 @@ function Card() {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center gap-4 p-4">
-      {products.map((product) => (
-        <div
-          key={product.id}
-          className="flex flex-col h-80 w-64 border border-gray-200 rounded-lg shadow-lg"
-        >
-          <div className="relative flex justify-between p-2">
-            <div className="h-2 flex justify-center items-center rounded bg-red-500 text-white px-3 py-3 text-sm font-semibold">
-              -{product.discount || 10}%
+    <>
+      <div className="flex flex-wrap justify-center gap-4 p-4">
+        {products.map((product) => (
+          <div
+            key={product.id}
+            className="flex flex-col h-80 w-64 border border-gray-200 rounded-lg shadow-lg"
+          >
+            <div className="relative flex justify-between p-2">
+              <div className="h-2 flex justify-center items-center rounded bg-red-500 text-white px-3 py-3 text-sm font-semibold">
+                -{product.discount || 10}%
+              </div>
+
+              <div className="flex flex-col space-y-2">
+                <button className="hover:text-red-500 text-gray-700 bg-gray-100 rounded-full p-2">
+                  <FaHeart />
+                </button>
+                <button className="hover:text-blue-500 text-gray-700 bg-gray-100 rounded-full p-2">
+                  <FaEye />
+                </button>
+              </div>
             </div>
 
-            <div className="flex flex-col space-y-2">
-              <button className="hover:text-red-500 text-gray-700 bg-gray-100 rounded-full p-2">
-                <FaHeart />
-              </button>
-              <button className="hover:text-blue-500 text-gray-700 bg-gray-100 rounded-full p-2">
-                <FaEye />
+            <div className="flex-grow overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.title}
+                className="h-full w-full object-ficls
+              cls
+              "
+              />
+            </div>
+            <div className="flex justify-center">
+              {product.title.slice(0, 11)}
+            </div>
+            <div className="flex justify-center">{product.price}$</div>
+            <div className="flex justify-center">{product.rating.rate}</div>
+            <div className="p-2">
+              <button
+                className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
+                onClick={() => addToCart(product.id)}
+              >
+                Add to cart
               </button>
             </div>
           </div>
-
-          <div className="flex-grow overflow-hidden">
-            <img
-              src={product.image}
-              alt={product.title}
-              className="h-full w-full object-fit"
-            />
-          </div>
-
-          <div className="p-2">
-            <button
-              className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
-              onClick={() => addToCart(product.id)}
-            >
-              Add to cart
-            </button>
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+      <div className="flex justify-center">
+        <button className="m-1 p-2 rounded text-center bg-red-500">View All Products</button>
+      </div>
+    </>
   );
 }
 
