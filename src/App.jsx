@@ -3,7 +3,7 @@ import Navigation from "./components/Navigation";
 import SideBar from "./components/SideBar";
 import Slider from "./components/Slider";
 import Card from "./components/Card";
-import Signup from "./components/signup/Signup";
+//import Signup from "./components/signup/Signup";
 
 function App() {
   return (
