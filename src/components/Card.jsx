@@ -21,7 +21,7 @@ function Card() {
 
   return (
     <>
-      <div className="flex justify-center gap-4 p-4">
+      <div className="flex flex-wrap justify-center gap-4 p-4">
         {products.map((product) => (
           <div
             key={product.id}
