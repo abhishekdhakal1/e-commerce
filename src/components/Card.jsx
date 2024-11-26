@@ -4,11 +4,11 @@ import axios from "axios";
 
 function Card() {
   const [products, setProducts] = useState([]);
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
 
-  function addToCart(id) {
-    setCart((prevCart) => [id, ...prevCart]);
-  }
+  // function addToCart(id) {
+  //   setCart((prevCart) => [id, ...prevCart]);
+  // }
 
   useEffect(() => {
     axios
@@ -57,8 +57,8 @@ function Card() {
             <div className="flex justify-center">{product.rating.rate}</div>
             <div className="p-2">
               <button
-                className="w-full bg-black bg-opacity-80 text-white rounded-b-lg py-2 hover:bg-opacity-90"
-                onClick={() => addToCart(product.id)}
+                className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
+                // onClick={() => addToCart(product.id)}
               >
                 Add to cart
               </button>
