@@ -57,7 +57,7 @@ function Card() {
             <div className="flex justify-center">{product.rating.rate}</div>
             <div className="p-2">
               <button
-                className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
+                className="w-full bg-black bg-opacity-80 text-white rounded-b-lg py-2 hover:bg-opacity-90"
                 onClick={() => addToCart(product.id)}
               >
                 Add to cart
