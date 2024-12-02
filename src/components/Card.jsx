@@ -4,11 +4,6 @@ import axios from "axios";
 
 function Card() {
   const [products, setProducts] = useState([]);
-  // const [cart, setCart] = useState([]);
-
-  // function addToCart(id) {
-  //   setCart((prevCart) => [id, ...prevCart]);
-  // }
 
   useEffect(() => {
     axios
