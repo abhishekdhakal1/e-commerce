@@ -9,8 +9,8 @@ import {
 
 function Footer() {
   return (
-    <div className="h-[440px] bg-black text-primaryWhite flex flex-col justify-between">
-      <div className="flex justify-around items-center flex-grow">
+    <div className="h-[380px] bg-black text-primaryWhite flex flex-col justify-between">
+      <div className="pt-20 flex justify-around items-start flex-grow">
         <div className="flex flex-col gap-2">
           <span className="font-bold text-2xl">Exclusive</span>
           <span className="text-xl">Subscribe</span>
