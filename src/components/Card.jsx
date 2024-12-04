@@ -4,6 +4,11 @@ import axios from "axios";
 
 function Card() {
   const [products, setProducts] = useState([]);
+  const [cart,setCart]= useState([]);
+
+  function addToCart(id){
+      setCart([...cart, products[id]]);
+  }
 
   useEffect(() => {
     axios
@@ -13,7 +18,7 @@ function Card() {
       })
       .catch((err) => console.error("Error fetching data:", err));
   }, []);
-
+  
   return (
     <>
       <div className="flex flex-wrap justify-center gap-4 p-4">
@@ -53,7 +58,7 @@ function Card() {
             <div className="p-2">
               <button
                 className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
-                // onClick={() => addToCart(product.id)}
+                onClick={() => addToCart(product.id)}
               >
                 Add to cart
               </button>
