@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
 import { FaHeart, FaEye } from "react-icons/fa";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import {addToCart, removeFromCart} from '../context/cart/cartSlice';
 
 function Card() {
   const [products, setProducts] = useState([]);
-  const [cart,setCart]= useState([]);
+  const cart = useSelector((state)=> state.cart);
+  const dispatch = useDispatch();
 
-  function addToCart(id){
-      setCart([...cart, products[id]]);
+  function addToCart(product){
+      dispatch(addToCart(product));
   }
+
+  // const removeFromCart(id){
+  //   dispatch(removeFromCart({id}));
+  // }
 
   useEffect(() => {
     axios
@@ -46,8 +53,7 @@ function Card() {
               <img
                 src={product.image}
                 alt={product.title}
-                className="h-full w-full
-              "
+                className="h-full w-full"
               />
             </div>
             <div className="flex justify-center">
@@ -58,7 +64,7 @@ function Card() {
             <div className="p-2">
               <button
                 className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
-                onClick={() => addToCart(product.id)}
+                onClick={() => addToCart(product)}
               >
                 Add to cart
               </button>
