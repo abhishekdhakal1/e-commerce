@@ -2,20 +2,20 @@ import { useState, useEffect } from "react";
 import { FaHeart, FaEye } from "react-icons/fa";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import {addToCart, removeFromCart} from '../context/cart/cartSlice';
+import { addToCart, removeFromCart } from "../context/cart/cartSlice";
 
 function Card() {
   const [products, setProducts] = useState([]);
-  const cart = useSelector((state)=> state.cart);
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
-  function addToCart(product){
-      dispatch(addToCart(product));
+  function handleAddToCart(product) {
+    dispatch(addToCart(product));
   }
 
-  // const removeFromCart(id){
-  //   dispatch(removeFromCart({id}));
-  // }
+  function handleRemoveFromCart(id) {
+    dispatch(removeFromCart({ id }));
+  }
 
   useEffect(() => {
     axios
@@ -25,7 +25,7 @@ function Card() {
       })
       .catch((err) => console.error("Error fetching data:", err));
   }, []);
-  
+
   return (
     <>
       <div className="flex flex-wrap justify-center gap-4 p-4">
@@ -64,14 +64,25 @@ function Card() {
             <div className="p-2">
               <button
                 className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
-                onClick={() => addToCart(product)}
+                onClick={() => handleAddToCart(product)}
               >
                 Add to cart
               </button>
             </div>
+            <button onClick={() => handleRemoveFromCart(product.id)}>
+              Remove from Cart
+            </button>
+
+            <div>
+              <h2>Cart Items:</h2>
+              {cart.map((item) => (
+                <div key={item.id}>{item.name}</div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
+
       <div className="flex justify-center">
         <button className="m-1 p-2 rounded text-center bg-red-500">
           View All Products
