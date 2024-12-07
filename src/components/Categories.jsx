@@ -28,38 +28,24 @@ function Categories() {
     <div className="p-6">
       <div className="mb-4">
         <h2 className="text-xl font-semibold text-red-500">Categories</h2>
-      </div>{" "}
+      </div>
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold mb-6">Browse by Category</h2>{" "}
-        <button onClick={display} className="p-1 rounded bg-red-500">
-          View all Category
+        <h2 className="text-2xl font-bold mb-6">Browse by Category</h2>
+        <button onClick={display} className="p-1 rounded bg-red-500 text-white">
+          {viewAll ? "View Less" : "View All Categories"}
         </button>
       </div>
-      {viewAll ? (
-        <div className="grid grid-cols-3 gap-6">
-          {categories.map((category, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center p-4 text-center border rounded-lg space-y-2 bg-gray-100 hover:bg-red-500 hover:text-white transition-all duration-300 cursor-pointer"
-            >
-              <div className="text-3xl">{category.icon}</div>
-              <span className="text-lg font-medium">{category.name}</span>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-3 gap-6">
-          {category.map((category, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center p-4 text-center border rounded-lg space-y-2 bg-gray-100 hover:bg-red-500 hover:text-white transition-all duration-300 cursor-pointer"
-            >
-              <div className="text-3xl">{category.icon}</div>
-              <span className="text-lg font-medium">{category.name}</span>
-            </div>
-          ))}
-        </div>
-      )}
+      <div className="flex flex-wrap justify-between gap-6">
+        {(viewAll ? categories : category).map((category, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center w-[30%] p-4 text-center border rounded-lg space-y-2 bg-gray-100 hover:bg-red-500 hover:text-white transition-all duration-300 cursor-pointer"
+          >
+            <div className="text-3xl">{category.icon}</div>
+            <span className="text-lg font-medium">{category.name}</span>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
