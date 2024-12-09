@@ -1,4 +1,4 @@
 function SignUp(){
-    return <div></div>;
+    return <div>This is SignUp Page.</div>;
 }
 export default SignUp

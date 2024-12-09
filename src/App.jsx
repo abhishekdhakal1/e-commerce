@@ -1,20 +1,27 @@
+import { BrowserRouter, Route, Routes } from "react-router";
+
+import Layout from "./components/Layout";
 import Home from "./pages/Home";
-import Navigation from "./components/Navigation";
-import SideBar from "./components/SideBar";
-import Card from "./components/Card";
-import Categories from "./components/Categories";
-import Footer from "./components/Footer";
+import Cart from "./pages/Cart";
+import Account from "./pages/Account";
+import Profile from "./pages/Profile";
+import SignUp from "./pages/SignUp";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
   return (
-    <>
-      <Home />
-      <Navigation />
-      <SideBar />
-      <Card />
-      <Categories />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/account" element={<Account />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
+          <Route path="/wishlist" element={<Wishlist />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 export default App;
