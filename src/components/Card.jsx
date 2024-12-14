@@ -83,7 +83,7 @@ function Card() {
               <div className="flex justify-center text-lg font-semibold">
                 ${product.price.toFixed(2)}
               </div>
-              <div className="flex justify-center text-sm">
+              <div className="flex justify-center items-center text-sm">
                 Rating: {product.rating.rate} ⭐
               </div>
               <div className="p-2">
