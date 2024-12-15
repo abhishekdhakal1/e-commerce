@@ -88,7 +88,7 @@ function Card() {
               </div>
               <div className="p-2">
                 <button
-                  className="w-full bg-black bg-opacity-80 text-white rounded py-2 hover:bg-opacity-90"
+                  className="w-full bg-black bg-opacity-90 text-white rounded py-2 hover:bg-opacity-90"
                   onClick={() => dispatch(addToCart(product))}
                 >
                   Add to cart
