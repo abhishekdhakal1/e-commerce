@@ -62,10 +62,10 @@ function Card() {
                   -{product.discount || 10}%
                 </div>
                 <div className="flex flex-col space-y-2">
-                  <button className="hover:text-red-500 text-gray-700 bg-gray-100 rounded-full p-2">
+                  <button className="hover:text-red-400 text-gray-700 bg-gray-100 rounded-full p-2">
                     <FaHeart />
                   </button>
-                  <button className="hover:text-blue-500 text-gray-700 bg-gray-100 rounded-full p-2">
+                  <button className="hover:text-blue-400 text-gray-700 bg-gray-100 rounded-full p-2">
                     <FaEye />
                   </button>
                 </div>
